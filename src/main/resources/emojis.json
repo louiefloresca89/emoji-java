@@ -1,5 +1,5 @@
 [
-  {
+ {
     "emoji": "😄",
     "description": "smiling face with open mouth and smiling eyes",
     "aliases": [
@@ -59,7 +59,8 @@
     "emoji": "😉",
     "description": "winking face",
     "aliases": [
-      "wink"
+      "wink",
+      "wink2"
     ],
     "tags": [
       "flirt"
