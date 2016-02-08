@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import java.util.*;
 /**
  * Provides methods to parse strings with emojis.
  *
@@ -92,6 +92,8 @@ public class EmojiParser {
                         replacement += candidate.fitzpatrick.unicode;
                     }
                     result = result.replace(":" + candidate.fullString + ":", replacement);
+                    
+                     System.out.println("EmojiParser parseToUnicode = " + candidate.fullString  + " = " + replacement);
                 }
             }
         }
