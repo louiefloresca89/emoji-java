@@ -93,7 +93,7 @@ public class EmojiParser {
                     }
                     result = result.replace(":" + candidate.fullString + ":", replacement);
                     
-                     System.out.println("EmojiParser parseToUnicode = " + candidate.fullString  + " = " + replacement);
+                    System.out.println("EmojiParser parseToUnicode = " + candidate.fullString  + " = " + replacement);
                 }
             }
         }
@@ -102,6 +102,7 @@ public class EmojiParser {
         for (Emoji emoji : EmojiManager.getAll()) {
             result = result.replace(emoji.getHtmlHexidecimal(), emoji.getUnicode());
             result = result.replace(emoji.getHtmlDecimal(), emoji.getUnicode());
+            
         }
 
         return result;
@@ -117,12 +118,15 @@ public class EmojiParser {
             String match = matcher.group();
             if (!match.contains("|")) {
                 candidates.add(new AliasCandidate(match, match, null));
+                 System.out.println("EmojiParser getAliasCandidates1 = " + match);
             } else {
                 String[] splitted = match.split("\\|");
                 if (splitted.length == 2 || splitted.length > 2) {
                     candidates.add(new AliasCandidate(match, splitted[0], splitted[1]));
+                     System.out.println("EmojiParser getAliasCandidates2 = " + match + "="+splitted[0]+"="+ splitted[1]);
                 } else {
                     candidates.add(new AliasCandidate(match, match, null));
+                     System.out.println("EmojiParser getAliasCandidates3 = " + match);
                 }
             }
         }
