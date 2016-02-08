@@ -92,6 +92,9 @@ public class EmojiParser {
                         replacement += candidate.fitzpatrick.unicode;
                     }
                     result = result.replace(":" + candidate.fullString + ":", replacement);
+                    
+                    Log.d("EmojiParser" , "parseToUnicode = " + candidate.fullString  + " = " replacement);
+                    
                 }
             }
         }
