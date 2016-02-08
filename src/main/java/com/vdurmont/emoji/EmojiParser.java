@@ -117,16 +117,17 @@ public class EmojiParser {
         while (matcher.find()) {
             String match = matcher.group();
             if (!match.contains("|")) {
-                candidates.add(new AliasCandidate(match, match, null));
-                 System.out.println("EmojiParser getAliasCandidates1 = " + match);
+                if(match.equals("=D")) {
+                   candidates.add(new AliasCandidate("laughing", "laughing", null)); 
+                } else {
+                   candidates.add(new AliasCandidate(match, match, null)); 
+                }
             } else {
                 String[] splitted = match.split("\\|");
                 if (splitted.length == 2 || splitted.length > 2) {
                     candidates.add(new AliasCandidate(match, splitted[0], splitted[1]));
-                     System.out.println("EmojiParser getAliasCandidates2 = " + match + "="+splitted[0]+"="+ splitted[1]);
                 } else {
                     candidates.add(new AliasCandidate(match, match, null));
-                     System.out.println("EmojiParser getAliasCandidates3 = " + match);
                 }
             }
         }
